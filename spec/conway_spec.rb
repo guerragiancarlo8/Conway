@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../classes/conway_class.rb'
+require_relative '../classes/cell.rb'
 
 RSpec.describe Cell do
 	

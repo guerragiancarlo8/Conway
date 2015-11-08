@@ -1,4 +1,5 @@
 class Cell
+	attr_accessor :state
 	def initialize(state, neighbours)
 		@state = state
 		@neighbours = neighbours
