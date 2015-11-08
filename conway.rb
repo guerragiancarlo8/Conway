@@ -3,11 +3,11 @@ require_relative './classes/grid.rb'
 require_relative './classes/cell.rb'
 require 'colorize'
 
-grid = Grid.new(50)
+grid = Grid.new(75)
  
 count = 0
 
-while count < 100 && grid.check_for_all_zeroes
+while count < 100
 	mini_count = 0
 
 
@@ -27,7 +27,7 @@ while count < 100 && grid.check_for_all_zeroes
 		end
 	end
 
-	while mini_count < 100000
+	while mini_count < 1000000
 		mini_count+=1
 	end
 	grid.grid.each do |x|
@@ -45,6 +45,10 @@ while count < 100 && grid.check_for_all_zeroes
 
 
 	count += 1
+
+	if !grid.check_for_all_zeroes
+		break
+	end
 end
 
 #repoblando

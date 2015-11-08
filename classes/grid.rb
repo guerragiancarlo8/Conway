@@ -7,16 +7,18 @@ class Grid
 
 	def check_for_all_zeroes
 		count = 0
-		@grid.each do |x|
-			@grid.each do |y|
-				count += 1
+		@grid.each_index do |x|
+			@grid[x].each_index do |y|
+				if @grid[x][y] == 0
+					count += 1
+				end
 			end
 		end
 
 		if count == @grid.size * @grid.size
-			true
-		else
 			false
+		else
+			true
 		end
 	end
 
