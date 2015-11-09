@@ -2,9 +2,20 @@ require_relative 'cell.rb'
 class Grid
 	attr_accessor :grid
 	def initialize size = 0
-		@grid = Array.new(size){Array.new(size,Random.new.rand(2))}
+		#@grid = Array.new(size){Array.new(size,Random.new.rand(2))}
+		@grid = Array.new(size){Array.new(size,0)}
 	end
 
+	def randomize_cell_numbers
+		count = 0
+		@grid.each_index do |x|
+			@grid[x].each_index do |y|
+				
+				@grid[x][y] = Random.new.rand(2)
+
+			end
+		end
+	end
 	def check_for_all_zeroes
 		count = 0
 		@grid.each_index do |x|

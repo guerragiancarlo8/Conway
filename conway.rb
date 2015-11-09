@@ -3,17 +3,16 @@ require_relative './classes/grid.rb'
 require_relative './classes/cell.rb'
 require 'colorize'
 
-grid = Grid.new(75)
+grid = Grid.new(100)
+
+grid.randomize_cell_numbers
  
 count = 0
 
-while count < 100
+begin
 	mini_count = 0
 
-
-	system "clear"
 	grid.populate
-
 	puts " "
 	grid.grid.each_index do |x|
 		grid.grid[x].each_index do |y|
@@ -25,8 +24,10 @@ while count < 100
 			end
 			#print (y.state.to_s) + " ".chomp
 		end
+		puts
 	end
 
+	puts "\e[H\e[2J"
 	while mini_count < 1000000
 		mini_count+=1
 	end
@@ -49,6 +50,9 @@ while count < 100
 	if !grid.check_for_all_zeroes
 		break
 	end
-end
+end while count < 100
+
+
+
 
 #repoblando
